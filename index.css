@@ -3,19 +3,18 @@
     max-width: 860px;
 }
 
-.container {
-    margin: 10% 10%;
-}
-
 #title {
     font-size: 55px;
     font-family: Arial, Helvetica, sans-serif;
     color: #4A4A4A;
     font-weight: bold;
+    padding-left: 10%;
 }
 
 .search-container {
     margin-top: -30px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 #submitButton {
@@ -24,7 +23,6 @@
     width: 5%;
     bottom: 45px;
     outline: none;
-    color: blue;
 }
 
 #submitArea {
@@ -39,7 +37,108 @@
 
 .slider-container {
     width: 101.8%;
-    background-color: rgb(239, 239, 239);
     border-radius: 5px;
-    height: 500px;
+    height: 600px;
+}
+
+.slide {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 5px;
+}
+
+.slide-image {
+    white-space:nowrap;
+    overflow: hidden;
+    width: 45%;
+    height: 600px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.slide-text {
+    position: relative;
+    width: 55%;
+    left: 45%;
+    bottom: 600px;
+    height: 600px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 0px 5px 5px 0px;
+}
+
+.image {
+    height: 100%;
+}
+
+#prev {
+    position: relative;
+    bottom: 950px;
+    background-image: url("/assets/left-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 50%;
+    background-color: white;
+    border: none;
+    padding: 35px;
+    outline: none;
+    cursor: pointer;
+}
+
+#next {
+    position: relative;
+    bottom: 950px;
+    left: 83.5%;
+    background-image: url("/assets/right-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 50%;
+    background-color: white;
+    border: none;
+    padding: 35px;
+    outline: none;
+    cursor: pointer;
+}
+
+.articleTitle {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4A4A4A;
+    font-weight: bold;
+    margin-top: 0px;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.articleAuthor {
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4A4A4A;
+    margin-top: -50px;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.articleDescription {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4A4A4A;
+    line-height: 130%;
+    margin-top: -10px;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.articleSource {
+    position: absolute;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 30px;
+    color: #4A4A4A;
+    outline: none;
+    margin-top: 32%;
+}
+
+.articleSource:hover {
+    font-weight: bold;
 }

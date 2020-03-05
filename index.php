@@ -23,7 +23,16 @@
                 </form>
             </div>
             <div class="slider-container">
-                
+                <div class="slide">
+                    <div class="slide-image">
+
+                    </div>
+                    <div class="slide-text">
+
+                    </div>
+                </div>
+                <button id="prev"></button>
+                <button id="next"></button>
             </div>
         </div>
     </div>
