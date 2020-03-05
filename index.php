@@ -16,20 +16,14 @@
     <div class="wrapper">
         <div class="container">
             <p id="title">Pretraži vijesti</p>
-            <div class="search-container">
+            <div class="searchContainer">
                 <form id="submitForm">
                     <input id="submitArea" type="text" placeholder="Pretraži" name="keywords">
                     <input id="submitButton" type="image" src="/assets/search.svg" value="send">
                 </form>
             </div>
-            <div class="slider-container">
-                <div class="slide">
-                    <div class="slide-image">
-
-                    </div>
-                    <div class="slide-text">
-
-                    </div>
+            <div class="sliderContainer">
+                <div class="slidesArray">
                 </div>
                 <button id="prev"></button>
                 <button id="next"></button>

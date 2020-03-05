@@ -11,7 +11,7 @@
     padding-left: 10%;
 }
 
-.search-container {
+.searchContainer {
     margin-top: -30px;
     padding-left: 10%;
     padding-right: 10%;
@@ -35,7 +35,7 @@
     outline: none;
 }
 
-.slider-container {
+.sliderContainer {
     width: 101.8%;
     border-radius: 5px;
     height: 600px;
@@ -47,7 +47,7 @@
     border-radius: 5px;
 }
 
-.slide-image {
+.slideImage {
     white-space:nowrap;
     overflow: hidden;
     width: 45%;
@@ -55,7 +55,7 @@
     border-radius: 5px 0px 0px 5px;
 }
 
-.slide-text {
+.slideText {
     position: relative;
     width: 55%;
     left: 45%;

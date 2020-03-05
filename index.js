@@ -12,35 +12,30 @@ $(document).ready(function(){
                 articles = data.articles;
 
                 if (articles.length!=0) {
-
-                    /*for (var i=0; i<articles.length; i++) {
+                    
+                    for (var i=0; i<articles.length; i++) {
                         console.log(articles[i]);
-                        $(".slide-image-container").append("<img src='"+articles[i].urlToImage+"' class='image'>");
-                    }*/
-
-                    console.log(articles);
-                    if (articles[0].urlToImage) {
-                        $(".slide-image").append("<img src='"+articles[0].urlToImage+"' class='image'>");
-                        
-                        var img = new Image();
-                        img.src = articles[0].urlToImage;
-                        var margin = (-0.5*img.width).toString();
-
-                        console.log(margin+"px");
-
-                        $(".image").css("margin-left", margin+"px");
-                    }
-                    if (articles[0].title) {
-                        $(".slide-text").append("<p class='articleTitle'>"+articles[0].title+"</p>");
-                    }
-                    if (articles[0].author) {
-                        $(".slide-text").append("<p class='articleAuthor'>Autor: "+articles[0].author+"</p>");
-                    }
-                    if (articles[0].description) {
-                        $(".slide-text").append("<p class='articleDescription'>"+articles[0].description+"</p>");
-                    }
-                    if (articles[0].url) {
-                        $(".slide-text").append("<a class='articleSource' href='"+articles[0].url+"' target='_blank'>Pročitaj članak</a>");
+                        $(".slidesArray").append("<div class='slide'><div class='slideImage'></div><div class='slideText'></div></div>");
+                        if (articles[i].urlToImage) {
+                            $(".slideImage").eq(i).append("<img src='"+articles[i].urlToImage+"' class='image'>");
+                            var img = new Image();
+                            img.src = articles[i].urlToImage;
+                            var margin = (-0.5*img.width).toString();
+                            console.log(margin);                        // popravit kasnije
+                            $(".image").eq(i).css("margin-left", margin+"px");
+                        }
+                        if (articles[i].title) {
+                            $(".slideText").eq(i).append("<p class='articleTitle'>"+articles[i].title+"</p>");
+                        }
+                        if (articles[i].author) {
+                            $(".slideText").eq(i).append("<p class='articleAuthor'>Autor: "+articles[i].author+"</p>");
+                        }
+                        if (articles[i].description) {
+                            $(".slideText").eq(i).append("<p class='articleDescription'>"+articles[i].description+"</p>");
+                        }
+                        if (articles[i].url) {
+                            $(".slideText").eq(i).append("<a class='articleSource' href='"+articles[i].url+"' target='_blank'>Pročitaj članak</a>");
+                        }
                     }
                 }
             })
