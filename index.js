@@ -26,6 +26,9 @@ $(document).ready(function(){
                             console.log(margin);                        // popravit kasnije
                             $(".image").eq(i).css("margin-left", margin+"px");*/
                         }
+                        else {
+                            $(".slideImage").eq(i).append("<img src='/assets/Placeholder.jpg' class='image'>");
+                        }
                         if (articles[i].title) {
                             $(".slideText").eq(i).append("<p class='articleTitle'>"+articles[i].title+"</p>");
                         }
@@ -44,16 +47,25 @@ $(document).ready(function(){
         }
     })
 
+    var transition = 86;    // 10% = 86px
+
     $('#next').on('click', function () {
         var button = $(this);
         button.prop('disabled', true);
 
         var last = $('.slide').last();
         last.prependTo('.slidesArray');
-
-        last.animate({}, 200, function(){
+        transition-=700;
+        $('.slidesArray').css("marginLeft", transition.toString()+"px");
+        transition+=700;
+        $('.slidesArray').animate({marginLeft: transition.toString()+"px"}, 300, function(){
             button.prop('disabled', false);
         });
+
+        //$('#slides').css({"transition": "all 1s" ,"transform": "translateX("+transition.toString()+"px)"});
+
+        //$('#slides').addClass("animate");
+
     });
 
     $('#prev').on('click', function () {
@@ -61,9 +73,11 @@ $(document).ready(function(){
         button.prop('disabled', true);
 
         var first = $('.slide').first();
-
-        first.animate({}, 200, function() {
-            first.appendTo('.slidesArray');
+        first.appendTo('.slidesArray');
+        transition+=700;
+        $('.slidesArray').css("marginLeft", transition.toString()+"px");
+        transition-=700;
+        $('.slidesArray').animate({marginLeft: transition.toString()+"px"}, 300, function(){
             button.prop('disabled', false);
         });
     });
