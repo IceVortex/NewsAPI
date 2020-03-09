@@ -9,7 +9,6 @@ $(document).ready(function(){
 
         if (keywords) {
             $.get("http://newsapi.org/v2/top-headlines", {q: keywords, pageSize: 5, apiKey: key}, function(data){
-                console.log(data);
                 articles = data.articles;
                 document.getElementById("slides").innerHTML = "";
 
