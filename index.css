@@ -37,18 +37,18 @@
 
 .sliderContainer {
     width: 101.8%;
+    visibility: hidden;
+}
+
+.slidesArray {
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 5px;
     height: 600px;
 }
 
-.slide {
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: 5px;
-}
-
 .slideImage {
-    white-space:nowrap;
+    white-space: nowrap;
     overflow: hidden;
     width: 45%;
     height: 600px;
@@ -70,8 +70,8 @@
 }
 
 #prev {
-    position: relative;
-    bottom: 950px;
+    position: absolute;
+    bottom: 370px;
     background-image: url("/assets/left-arrow.svg");
     background-repeat: no-repeat;
     background-size: 50%;
@@ -84,9 +84,9 @@
 }
 
 #next {
-    position: relative;
-    bottom: 950px;
-    left: 83.5%;
+    position: absolute;
+    bottom: 370px;
+    left: 70.5%;
     background-image: url("/assets/right-arrow.svg");
     background-repeat: no-repeat;
     background-size: 50%;

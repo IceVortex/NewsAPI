@@ -23,7 +23,7 @@
                 </form>
             </div>
             <div class="sliderContainer">
-                <div class="slidesArray">
+                <div class="slidesArray" id="slides">
                 </div>
                 <button id="prev"></button>
                 <button id="next"></button>
