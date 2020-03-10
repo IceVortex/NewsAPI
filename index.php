@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <title>News</title>
 </head>
@@ -22,11 +24,7 @@
                     <input id="submitButton" type="image" src="/assets/search.svg" value="send">
                 </form>
             </div>
-            <div class="sliderContainer">
-                <button id="prev"></button>
-                <div class="slidesArray" id="slides"></div>
-                <button id="next"></button>
-            </div>
+            <div class="slidesArray" id="slides"></div>
         </div>
     </div>
 </body>

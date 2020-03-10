@@ -6,50 +6,22 @@ $(document).ready(function(){
         var key = "ffa2a5621d404c09942b8e5767b10bcc";
 
         var articles=null;
-        $(".sliderContainer").css("visibility", "hidden");
-        $("#prev").css("visibility", "hidden");
-        $("#next").css("visibility", "hidden");
+        $(".slidesArray").css("visibility", "hidden");
+        $("#slides").remove();
 
         if (keywords) {
             $.get("http://newsapi.org/v2/top-headlines", {q: keywords, pageSize: 5, apiKey: key}, function(data){
                 articles = data.articles;
-                document.getElementById("slides").innerHTML = "";
-
                 if (articles.length!=0) {
-                    $(".sliderContainer").css("visibility", "visible");
-
-                    if(articles.length>1) {
-                        $("#prev").css("visibility", "visible");
-                        $("#next").css("visibility", "visible");
-                    }
-
+                    $('.container').append("<div class='slidesArray' id='slides'></div>")
+                    $(".slidesArray").css("visibility", "visible");
                     fillSlider(articles);
-
-                    if (articles.length==2) {
-                        fillSlider(articles);
-                    }
-
-                    $('.slide').first().addClass("active");
-                    var slides = $('.slide');
-                    slides.first().before(slides.last());
+                    $('.slidesArray').slick({
+                        prevArrow: "<button id='prev'></button>",
+                        nextArrow: "<button id='next'></button>"
+                    });
                 }
-            })
-        }
-    });
-
-    $('button').on('click', function() {
-        slides = $('.slide');
-        var button = $(this);
-        var activeSlide = $('.active');
-
-        if (button.attr('id') == 'next') {
-            slides.last().after(slides.first());
-            activeSlide.removeClass('active').next('.slide').addClass('active');
-        }
-
-        if (button.attr('id') == 'prev') {
-            slides.first().before(slides.last());
-            activeSlide.removeClass('active').prev('.slide').addClass('active');
+            });
         }
     });
 
