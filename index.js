@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     var transition = 86;    // 10% = 86px
 
-    $('#next').on('click', function () {
+    $('#prev').on('click', function () {
         var button = $(this);
         button.prop('disabled', true);
 
@@ -60,23 +60,19 @@ $(document).ready(function(){
         $('.slidesArray').animate({marginLeft: transition.toString()+"px"}, 300, function(){
             button.prop('disabled', false);
         });
-
-        //$('#slides').css({"transition": "all 1s" ,"transform": "translateX("+transition.toString()+"px)"});
-
-        //$('#slides').addClass("animate");
-
     });
 
-    $('#prev').on('click', function () {
+    $('#next').on('click', function () {
         var button = $(this);
         button.prop('disabled', true);
 
         var first = $('.slide').first();
-        first.appendTo('.slidesArray');
-        transition+=700;
-        $('.slidesArray').css("marginLeft", transition.toString()+"px");
+
         transition-=700;
         $('.slidesArray').animate({marginLeft: transition.toString()+"px"}, 300, function(){
+            first.appendTo('.slidesArray');
+            transition+=700;
+            $('.slidesArray').css("marginLeft", transition.toString()+"px");
             button.prop('disabled', false);
         });
     });
