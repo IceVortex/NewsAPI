@@ -23,9 +23,9 @@
                 </form>
             </div>
             <div class="sliderContainer">
-                <div id="prevButtonContainer"><button id="prev"></button></div>
+                <button id="prev"></button>
                 <div class="slidesArray" id="slides"></div>
-                <div id="nextButtonContainer"><button id="next"></button></div>
+                <button id="next"></button>
             </div>
         </div>
     </div>
