@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $("#submitForm").on("submit", event => {
+    $("#submitForm").on("submit", async (event) => {
         event.preventDefault();
 
         let keywords = $('input[name=keywords]').val();
@@ -10,18 +10,23 @@ $(document).ready(() => {
         $("#slides").remove();
 
         if (keywords) {
-            $.get("http://newsapi.org/v2/top-headlines", {q: keywords, pageSize: 5, apiKey: KEY}, data => {
-                articles = data.articles;
-                if (articles.length!=0) {
-                    $('.container').append("<div class='slidesArray' id='slides'></div>")
-                    $(".slidesArray").css("visibility", "visible");
-                    fillSlider(articles);
-                    $('.slidesArray').slick({
-                        prevArrow: "<button id='prevButton'></button>",
-                        nextArrow: "<button id='nextButton'></button>"
-                    });
-                }
-            });
+            try {
+                await $.get("http://newsapi.org/v2/top-headlines", {q: keywords, pageSize: 5, apiKey: KEY}, data => {
+                    articles = data.articles;
+                    if (articles.length!=0) {
+                        $('.container').append("<div class='slidesArray' id='slides'></div>")
+                        $(".slidesArray").css("visibility", "visible");
+                        fillSlider(articles);
+                        $('.slidesArray').slick({
+                            prevArrow: "<button id='prevButton'></button>",
+                            nextArrow: "<button id='nextButton'></button>"
+                        });
+                    }
+                });
+            }
+            catch(error) {
+                console.log(`Status: ${error.status}`);
+            }
         }
     });
 
@@ -32,16 +37,16 @@ $(document).ready(() => {
             if (!article.description) article.description = "No description.";
 
             $(".slidesArray").append(
-                `<div class='slide'>\
-                    <div class='slideImage'>\
-                        <img src='${article.urlToImage}' class='image'>\
-                    </div>\
-                    <div class='slideText'>\
-                        <p class='articleTitle'>${article.title}</p>\
-                        <p class='articleAuthor'>Autor: ${article.author}</p>\
-                        <p class='articleDescription'>${article.description}</p>\
-                        <a class='articleSource' href='${article.url}' target='_blank'>Pročitaj članak</a>\
-                    </div>\
+                `<div class='slide'>
+                    <div class='slideImage'>
+                        <img src='${article.urlToImage}' class='image'>
+                    </div>
+                    <div class='slideText'>
+                        <p class='articleTitle'>${article.title}</p>
+                        <p class='articleAuthor'>Autor: ${article.author}</p>
+                        <p class='articleDescription'>${article.description}</p>
+                        <a class='articleSource' href='${article.url}' target='_blank'>Pročitaj članak</a>
+                    </div>
                 </div>`
             );
         });

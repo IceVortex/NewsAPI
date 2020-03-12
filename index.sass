@@ -1,10 +1,8 @@
-@use 'externalStyle'
+@import 'variables'
+@import 'externalStyle'
   
 $slide-width: 700px
 $slide-height: 600px
-
-$primary-text-color: externalStyle.$primary-text-color
-$primary-text-font: externalStyle.$primary-text-font
 
 .wrapper
   margin: 0 auto
@@ -79,19 +77,19 @@ $primary-text-font: externalStyle.$primary-text-font
   background-image: url('/assets/right-arrow.svg')
 
 .articleTitle
-  +externalStyle.article-text
+  +article-text
   font-size: 30px
   font-weight: bold
   margin-top: 0px
   padding-top: 30px
 
 .articleAuthor
-  +externalStyle.article-text
+  +article-text
   font-size: 13px
   margin-top: -50px
 
 .articleDescription
-  +externalStyle.article-text
+  +article-text
   font-size: 18px
   line-height: 130%
   margin-top: -10px
@@ -108,4 +106,4 @@ $primary-text-font: externalStyle.$primary-text-font
   &:hover
     font-weight: bold
 
-+externalStyle.test-interpolate(testKlasa, 50)
++test-interpolate(testKlasa, 50)
