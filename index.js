@@ -17,8 +17,8 @@ $(document).ready(function(){
                     $(".slidesArray").css("visibility", "visible");
                     fillSlider(articles);
                     $('.slidesArray').slick({
-                        prevArrow: "<button id='prev'></button>",
-                        nextArrow: "<button id='next'></button>"
+                        prevArrow: "<button id='prevButton'></button>",
+                        nextArrow: "<button id='nextButton'></button>"
                     });
                 }
             });
