@@ -1,27 +1,10 @@
-$primary-text-color: rgb(74, 74, 74)
-$primary-text-font: Arial, Helvetica, sans-serif
-
+@use 'externalStyle'
+  
 $slide-width: 700px
 $slide-height: 600px
 
-%navigation-button
-  position: absolute
-  top: 250px
-  background-repeat: no-repeat
-  background-size: 50%
-  background-position: 50% 50%
-  background-color: rgb(255, 255, 255)
-  border: none
-  padding: 35px
-  outline: none
-  cursor: pointer
-
-%article-text
-  font-family: $primary-text-font
-  color: $primary-text-color
-  padding-top: 40px
-  padding-left: 30px
-  padding-right: 30px
+$primary-text-color: externalStyle.$primary-text-color
+$primary-text-font: externalStyle.$primary-text-font
 
 .wrapper
   margin: 0 auto
@@ -96,19 +79,19 @@ $slide-height: 600px
   background-image: url('/assets/right-arrow.svg')
 
 .articleTitle
-  @extend %article-text
+  +externalStyle.article-text
   font-size: 30px
   font-weight: bold
   margin-top: 0px
   padding-top: 30px
 
 .articleAuthor
-  @extend %article-text
+  +externalStyle.article-text
   font-size: 13px
   margin-top: -50px
 
 .articleDescription
-  @extend %article-text
+  +externalStyle.article-text
   font-size: 18px
   line-height: 130%
   margin-top: -10px
@@ -125,3 +108,4 @@ $slide-height: 600px
   &:hover
     font-weight: bold
 
++externalStyle.test-interpolate(testKlasa, 50)

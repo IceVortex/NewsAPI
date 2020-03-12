@@ -1,4 +1,4 @@
-#nextButton, #prevButton {
+#prevButton, #nextButton {
   position: absolute;
   top: 250px;
   background-repeat: no-repeat;
@@ -9,14 +9,6 @@
   padding: 35px;
   outline: none;
   cursor: pointer;
-}
-
-.articleDescription, .articleAuthor, .articleTitle {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #4a4a4a;
-  padding-top: 40px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .wrapper {
@@ -101,6 +93,11 @@
 }
 
 .articleTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4a4a4a;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   font-size: 30px;
   font-weight: bold;
   margin-top: 0px;
@@ -108,11 +105,21 @@
 }
 
 .articleAuthor {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4a4a4a;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   font-size: 13px;
   margin-top: -50px;
 }
 
 .articleDescription {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4a4a4a;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   font-size: 18px;
   line-height: 130%;
   margin-top: -10px;
@@ -129,6 +136,10 @@
 }
 .articleSource:hover {
   font-weight: bold;
+}
+
+.klasa-testKlasa {
+  font-size: 50px;
 }
 
 /*# sourceMappingURL=index.css.map */

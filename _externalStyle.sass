@@ -1,0 +1,26 @@
+$primary-text-color: rgb(74, 74, 74)
+$primary-text-font: Arial, Helvetica, sans-serif
+  
+%navigation-button
+  position: absolute
+  top: 250px
+  background-repeat: no-repeat
+  background-size: 50%
+  background-position: 50% 50%
+  background-color: rgb(255, 255, 255)
+  border: none
+  padding: 35px
+  outline: none
+  cursor: pointer
+
+=article-text
+  font-family: $primary-text-font
+  color: $primary-text-color
+  padding-top: 40px
+  padding-left: 30px
+  padding-right: 30px
+
+=test-interpolate($var1, $var2)
+  .klasa-#{$var1}
+    font-size: #{$var2}px
+  
