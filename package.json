@@ -1,0 +1,25 @@
+{
+  "name": "newsapi",
+  "version": "1.0.0",
+  "description": "get world news with keywords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IceVortex/NewsAPI.git"
+  },
+  "author": "Mitar Cvjetkovc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IceVortex/NewsAPI/issues"
+  },
+  "homepage": "https://github.com/IceVortex/NewsAPI#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch-sass": "^1.4.1"
+  }
+}

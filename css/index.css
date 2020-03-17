@@ -1,4 +1,4 @@
-#nextButton, #prevButton {
+#prevButton, #nextButton {
   position: absolute;
   top: 250px;
   background-repeat: no-repeat;
@@ -8,38 +8,33 @@
   border: none;
   padding: 35px;
   outline: none;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .wrapper {
   margin: 0 auto;
   max-width: 860px;
   min-width: 860px;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 #title {
-  font-size: 55px;
+  font-size: 150px;
   font-family: Arial, Helvetica, sans-serif;
   color: #4a4a4a;
   font-weight: bold;
   padding-left: 9.2%;
-  margin-top: 30px;
-}
+  margin-top: 30px; }
 
 .searchContainer {
   margin-top: -30px;
   padding-left: 9.2%;
-  padding-right: 10.8%;
-}
+  padding-right: 10.8%; }
 
 #submitButton {
   position: relative;
   left: 95%;
   width: 5%;
   bottom: 45px;
-  outline: none;
-}
+  outline: none; }
 
 #submitArea {
   width: 100%;
@@ -48,8 +43,7 @@
   border: 2px solid #adadad;
   border-radius: 5px;
   font-size: 18px;
-  outline: none;
-}
+  outline: none; }
 
 .slidesArray {
   position: relative;
@@ -57,16 +51,14 @@
   margin-left: auto;
   margin-right: auto;
   height: 600px;
-  width: 700px;
-}
+  width: 700px; }
 
 .slideImage {
   white-space: nowrap;
   overflow: hidden;
   width: 45%;
   height: 600px;
-  border-radius: 5px 0px 0px 5px;
-}
+  border-radius: 5px 0px 0px 5px; }
 
 .slideText {
   position: relative;
@@ -75,22 +67,18 @@
   bottom: 600px;
   height: 600px;
   background-color: #ebebeb;
-  border-radius: 0px 5px 5px 0px;
-}
+  border-radius: 0px 5px 5px 0px; }
 
 .image {
-  height: 100%;
-}
+  height: 100%; }
 
 #prevButton {
   left: -80px;
-  background-image: url("/assets/left-arrow.svg");
-}
+  background-image: url("/assets/left-arrow.svg"); }
 
 #nextButton {
   left: 710px;
-  background-image: url("/assets/right-arrow.svg");
-}
+  background-image: url("/assets/right-arrow.svg"); }
 
 .articleTitle {
   font-family: Arial, Helvetica, sans-serif;
@@ -101,8 +89,7 @@
   font-size: 30px;
   font-weight: bold;
   margin-top: 0px;
-  padding-top: 30px;
-}
+  padding-top: 30px; }
 
 .articleAuthor {
   font-family: Arial, Helvetica, sans-serif;
@@ -111,8 +98,7 @@
   padding-left: 30px;
   padding-right: 30px;
   font-size: 13px;
-  margin-top: -50px;
-}
+  margin-top: -50px; }
 
 .articleDescription {
   font-family: Arial, Helvetica, sans-serif;
@@ -122,8 +108,7 @@
   padding-right: 30px;
   font-size: 18px;
   line-height: 130%;
-  margin-top: -10px;
-}
+  margin-top: -10px; }
 
 .articleSource {
   position: absolute;
@@ -132,14 +117,9 @@
   padding-left: 30px;
   bottom: 5%;
   color: #4a4a4a;
-  outline: none;
-}
-.articleSource:hover {
-  font-weight: bold;
-}
+  outline: none; }
+  .articleSource:hover {
+    font-weight: bold; }
 
 .klasa-testKlasa {
-  font-size: 50px;
-}
-
-/*# sourceMappingURL=index.css.map */
+  font-size: 50px; }
