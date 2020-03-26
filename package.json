@@ -17,9 +17,21 @@
   },
   "homepage": "https://github.com/IceVortex/NewsAPI#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.11.0",
+    "browserify": "^16.5.0",
     "gulp": "^3.9.1",
+    "gulp-connect-php": "^1.0.3",
     "gulp-sass": "^4.0.2",
-    "gulp-connect-php": "^1.0.3"
+    "gulp-uglify": "^3.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }
