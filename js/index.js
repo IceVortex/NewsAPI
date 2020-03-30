@@ -1,3 +1,6 @@
+import "@babel/polyfill";
+const axios = require('axios').default;
+
 $(document).ready(() => {
     $("#submitForm").on("submit", async (event) => {
         event.preventDefault();
@@ -11,18 +14,23 @@ $(document).ready(() => {
 
         if (keywords) {
             try {
-                await $.get("http://newsapi.org/v2/top-headlines", {q: keywords, pageSize: 5, apiKey: KEY}, data => {
-                    articles = data.articles;
-                    if (articles.length!=0) {
-                        $('.container').append("<div class='slidesArray' id='slides'></div>")
-                        $(".slidesArray").css("visibility", "visible");
-                        fillSlider(articles);
-                        $('.slidesArray').slick({
-                            prevArrow: "<button id='prevButton'></button>",
-                            nextArrow: "<button id='nextButton'></button>"
-                        });
+                const response = await axios.get('http://newsapi.org/v2/top-headlines', {
+                    params: {
+                        q: keywords,
+                        pageSize: 6,
+                        apiKey: KEY
                     }
-                });
+                })
+                articles = response.data.articles;
+                if (articles.length!=0) {
+                    $('.container').append("<div class='slidesArray' id='slides'></div>")
+                    $(".slidesArray").css("visibility", "visible");
+                    fillSlider(articles);
+                    $('.slidesArray').slick({
+                        prevArrow: "<button id='prevButton'></button>",
+                        nextArrow: "<button id='nextButton'></button>"
+                    });
+                }
             }
             catch(error) {
                 console.log(`Status: ${error.status}`);
