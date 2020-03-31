@@ -1,23 +1,22 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
-var connect = require('gulp-connect-php');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync');
+const connect = require('gulp-connect-php');
 
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var uglify = require('gulp-uglify');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const uglify = require('gulp-uglify');
 
-
-gulp.task('sass', function() {
+gulp.task('sass', () => {
     return gulp.src('./sass/index.sass')
       .pipe(sass())
       .pipe(gulp.dest('./css'))
       .pipe(browserSync.stream());
 });
 
-gulp.task('js', function() {
+gulp.task('js', () => {
     return browserify({
       entries: ['./js/']
     })
@@ -29,8 +28,8 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./JSbabel/'))
 });
 
-gulp.task('watch', ['sass', 'js'], function() {
-    connect.server({}, function () {
+gulp.task('watch', ['sass', 'js'], () => {
+    connect.server({}, () => {
         browserSync({
           proxy: '127.0.0.1:8000'
         });

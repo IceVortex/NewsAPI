@@ -21,7 +21,7 @@ $(document).ready(() => {
                         apiKey: KEY
                     }
                 })
-                articles = response.data.articles;
+                articles = [...response.data.articles];
                 if (articles.length!=0) {
                     $('.container').append("<div class='slidesArray' id='slides'></div>")
                     $(".slidesArray").css("visibility", "visible");
@@ -40,20 +40,21 @@ $(document).ready(() => {
 
     function fillSlider(articles) {
         articles.forEach(article => {
-            if (!article.urlToImage) article.urlToImage = "/assets/Placeholder.jpg";
-            if (!article.author) article.author = "Unknown";
-            if (!article.description) article.description = "No description.";
+            let { urlToImage, author, description, title, url } = article;
+            if (!urlToImage) urlToImage = "/assets/Placeholder.jpg";
+            if (!author) author = "Unknown";
+            if (!description) description = "No description.";
 
             $(".slidesArray").append(
                 `<div class='slide'>
                     <div class='slideImage'>
-                        <img src='${article.urlToImage}' class='image'>
+                        <img src='${urlToImage}' class='image'>
                     </div>
                     <div class='slideText'>
-                        <p class='articleTitle'>${article.title}</p>
-                        <p class='articleAuthor'>Autor: ${article.author}</p>
-                        <p class='articleDescription'>${article.description}</p>
-                        <a class='articleSource' href='${article.url}' target='_blank'>Pročitaj članak</a>
+                        <p class='articleTitle'>${title}</p>
+                        <p class='articleAuthor'>Autor: ${author}</p>
+                        <p class='articleDescription'>${description}</p>
+                        <a class='articleSource' href='${url}' target='_blank'>Pročitaj članak</a>
                     </div>
                 </div>`
             );
