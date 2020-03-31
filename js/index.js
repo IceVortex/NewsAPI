@@ -1,4 +1,3 @@
-import "@babel/polyfill";
 const axios = require('axios').default;
 
 $(document).ready(() => {
