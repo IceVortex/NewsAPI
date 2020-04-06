@@ -1,4 +1,5 @@
 const axios = require('axios').default;
+import "../sass/index.sass"
 
 $(document).ready(() => {
     $("#submitForm").on("submit", async (event) => {
