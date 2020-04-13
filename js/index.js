@@ -33,7 +33,7 @@ $(document).ready(() => {
                 }
             }
             catch(error) {
-                console.log(`Status: ${error.status}`);
+                console.log(`Error, status: ${error.status}`);
             }
         }
     });
@@ -41,7 +41,7 @@ $(document).ready(() => {
     function fillSlider(articles) {
         articles.forEach(article => {
             let { urlToImage, author, description, title, url } = article;
-            if (!urlToImage) urlToImage = "/assets/Placeholder.jpg";
+            if (!urlToImage) urlToImage = "../assets/Placeholder.jpg";
             if (!author) author = "Unknown";
             if (!description) description = "No description.";
 
