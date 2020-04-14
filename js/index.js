@@ -1,5 +1,9 @@
+import "../sass/index.sass";
+
 const axios = require('axios').default;
-import "../sass/index.sass"
+import $ from "jquery";
+import "slick-carousel";
+import "../sass/slick.scss";
 
 $(document).ready(() => {
     $("#submitForm").on("submit", async (event) => {
@@ -33,7 +37,7 @@ $(document).ready(() => {
                 }
             }
             catch(error) {
-                console.log(`Error, status: ${error.status}`);
+                console.log(`Error: ${error}`);
             }
         }
     });

@@ -2,8 +2,7 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        main: "./js/index.js",
-        vendor: "./js/vendor.js"
+        main: "./js/index.js"
     },
     module: {
         rules: [
@@ -20,20 +19,7 @@ module.exports = {
                     outputPath: "imgs"
                   }
                 }
-            }/*,
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                  loader: "babel-loader",
-                  options: {
-                    presets: ["babel-preset-env"],
-                    plugins: [
-                        "babel-plugin-transform-runtime"
-                      ]
-                  }
-                }
-            }*/
+            }
         ]
     }
 }
