@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!--axios-->
+
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
+
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <title>News</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container" id="root">
+            <p id="title">Pretraži vijesti</p>
+            <div class="searchContainer">
+                <form id="submitForm">
+                    <input id="submitArea" type="text" name="keywords" v-model="keywords">
+                    <input id="submitButton" type="image" src="./assets/search.svg" v-on:click="getArticles($event)">
+                </form>
+            </div>
+            <div class="slidesArray" id="slides">
+                <div class="slide" v-for="article in articles">
+                    <div class="slideImage">
+                        <img v-bind:src="article.urlToImage" class="image">
+                    </div>
+                    <div class="slideText">
+                        <p class="articleTitle">{{article.title}}</p>
+                        <p class="articleAuthor">Autor: {{article.author ? article.author : "Unknown"}}</p>
+                        <p class="articleDescription">{{article.description ? article.description : "No description."}}</p>
+                        <a class="articleSource" v-bind:href="article.url" target="_blank">Pročitaj članak</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
