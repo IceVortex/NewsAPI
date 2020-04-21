@@ -18,14 +18,16 @@ new Vue({
                     }
                 })
                 this.articles = response.data.articles;
-                $('.slidesArray').slick({
-                    prevArrow: "<button id='prevButton'></button>",
-                    nextArrow: "<button id='nextButton'></button>"
-                });
             }
             catch (error) {
                 console.log(error);
             }
+            setTimeout(() => {
+                $('.slidesArray').slick({
+                    prevArrow: "<button id='prevButton'></button>",
+                    nextArrow: "<button id='nextButton'></button>"
+                });
+            }, 100);
         }
     }
 })
