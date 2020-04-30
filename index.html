@@ -24,21 +24,11 @@
             <div class="searchContainer">
                 <form id="submitForm">
                     <input id="submitArea" type="text" name="keywords" v-model="keywords">
-                    <input id="submitButton" type="image" src="./assets/search.svg" v-on:click="getArticles($event)">
+                    <input id="submitButton" type="image" src="./assets/search.svg" @click="getArticles($event)">
                 </form>
             </div>
             <div class="slidesArray" id="slides">
-                <div class="slide" v-for="article in articles">
-                    <div class="slideImage">
-                        <img v-bind:src="article.urlToImage ? article.urlToImage : './assets/Placeholder.jpg'" class="image">
-                    </div>
-                    <div class="slideText">
-                        <p class="articleTitle">{{article.title}}</p>
-                        <p class="articleAuthor">Autor: {{article.author ? article.author : "Unknown"}}</p>
-                        <p class="articleDescription">{{article.description ? article.description : "No description."}}</p>
-                        <a class="articleSource" v-bind:href="article.url" target="_blank">Pročitaj članak</a>
-                    </div>
-                </div>
+                <slide v-for="article in articles" :article="article" :key="article.title"></slide>
             </div>
         </div>
     </div>
