@@ -70,79 +70,8 @@ export default {
 };
 </script>
 
-<style lang="css">
-  #prevButton,
-  #nextButton {
-    position: absolute;
-    top: 250px;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 50% 50%;
-    background-color: white;
-    border: none;
-    padding: 35px;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .wrapper {
-    margin: 0 auto;
-    max-width: 860px;
-    min-width: 860px;
-    overflow: hidden;
-  }
-
-  #title {
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #4a4a4a;
-    font-weight: bold;
-    padding-left: 9.2%;
-    margin-top: 30px;
-  }
-
-  .searchContainer {
-    margin-top: -30px;
-    padding-left: 9.2%;
-    padding-right: 10.8%;
-  }
-
-  #submitButton {
-    position: relative;
-    left: 95%;
-    width: 5%;
-    bottom: 45px;
-    outline: none;
-  }
-
-  #submitArea {
-    width: 100%;
-    height: 50px;
-    padding-left: 10px;
-    border: 2px solid #adadad;
-    border-radius: 5px;
-    font-size: 18px;
-    outline: none;
-  }
-
-  .slidesArray {
-    position: relative;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 600px;
-    width: 700px;
-  }
-
-  #prevButton {
-    left: -80px;
-    background-image: url("./assets/left-arrow.svg");
-  }
-
-  #nextButton {
-    left: 710px;
-    background-image: url("./assets/right-arrow.svg");
-  }
+<style lang="sass">
+@import './components/sass/app.sass'
 </style>
 
 <style src="./components/sass/slick.scss">

@@ -1,12 +1,14 @@
-const path = require("path");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     entry: './src/main.js',
+    plugins: [new VueLoaderPlugin()],
     module: {
         rules: [
             {
                 test: /\.html$/i,
-                use: ["html-loader"],
+                use: ["vue-template-loader"],
+                exclude: /index.html/
             },
             {
                 test: /\.(svg|png|jpg|gif)$/,
@@ -20,26 +22,8 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                  loaders: {
-                    // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-                    // the "scss" and "sass" values for the lang attribute to the right configs here.
-                    // other preprocessors should work out of the box, no loader config like this necessary.
-                    'scss': [
-                      'vue-style-loader',
-                      'css-loader',
-                      'sass-loader'
-                    ],
-                    'sass': [
-                      'vue-style-loader',
-                      'css-loader',
-                      'sass-loader'
-                    ]
-                  }
-                  // other vue-loader options go here
-                }
-              }
+                loader: 'vue-loader'
+            }
         ]
     }
 }
